@@ -164,3 +164,15 @@ We can check if our AWS credentials is configured correctly by running the follo
 ```sh
 aws sts get-caller-identity
 ```
+
+If it is successful you should see a json payload return that looks like this:
+
+```json
+{
+    "UserId": "AILAZVEJ4YJI9QLWBARUS",
+    "Account": "123456789012",
+    "Arn": "arn:aws:iam::123456789012:user/terraform-beginner-bootcamp"
+}
+```
+
+We'll need to generate AWS CLI credentials from IAM User in order for the user to use AWS CLI
