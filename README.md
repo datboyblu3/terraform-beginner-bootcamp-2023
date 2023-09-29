@@ -242,3 +242,21 @@ If you lose this file, you will lose the knowledge of your infrastructure.
 ### Terraform Directory
 
 `.terraform` directory contains binaries of terraform providers 
+
+### Terraform AWS Configuration
+
+#### AWS Bucket Naming Rules
+
+AWS has specific bucket nameing rules you should read carefully through before deploying your resources:
+
+[AWS Bucket Naming Rules](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html)
+
+#### Terraform Random String
+
+To ensure your bucket names adhere to AWS's bucket naming schema, set the following variables using [Terraforms Random String resource](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string):
+
+ - lower            = true
+ - upper            = false
+ - length           = 32 #Must be between 3 and 63 characters long
+ - special          = false
+
